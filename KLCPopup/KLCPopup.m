@@ -241,7 +241,7 @@ const KLCPopupLayout KLCPopupLayoutCenter = { KLCPopupHorizontalLayoutCenter, KL
 
 - (void)dismiss:(BOOL)animated {
   
-  if (_isShowing && !_isBeingDismissed) {
+  if (!_isBeingDismissed) {
     _isBeingShown = NO;
     _isShowing = NO;
     _isBeingDismissed = YES;
