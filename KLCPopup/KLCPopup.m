@@ -241,7 +241,17 @@ const KLCPopupLayout KLCPopupLayoutCenter = { KLCPopupHorizontalLayoutCenter, KL
 
 - (void)dismiss:(BOOL)animated {
   
-  if (!_isBeingDismissed) {
+  while (TRUE)
+  {
+    if (!_isBeingShown)
+    {
+      break;
+    }
+      
+    usleep(500000);
+  }
+
+  if (_isShowing && !_isBeingDismissed) {
     _isBeingShown = NO;
     _isShowing = NO;
     _isBeingDismissed = YES;
